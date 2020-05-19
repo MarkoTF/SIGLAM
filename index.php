@@ -54,14 +54,14 @@
 <script>
   // Your web app's Firebase configuration
   var firebaseConfig = {
-    apiKey: "AIzaSyCCTfVdtYKdBxwQEOxcZ1qLKI2zNzdxGnE",
-    authDomain: "siglam.firebaseapp.com",
-    databaseURL: "https://siglam.firebaseio.com",
-    projectId: "siglam",
-    storageBucket: "siglam.appspot.com",
-    messagingSenderId: "1022084922574",
-    appId: "1:1022084922574:web:8cb9a19a30fd801692249f",
-    measurementId: "G-0K0HHRB03B"
+    apiKey: "AIzaSyBSJKpoQLymKGq5jogxcRBXmdje2O37qy4",
+    authDomain: "siglam-98442.firebaseapp.com",
+    databaseURL: "https://siglam-98442.firebaseio.com",
+    projectId: "siglam-98442",
+    storageBucket: "siglam-98442.appspot.com",
+    messagingSenderId: "96295527901",
+    appId: "1:96295527901:web:78ef350751292db0198234",
+    measurementId: "G-HJNKDL5BH3"
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
