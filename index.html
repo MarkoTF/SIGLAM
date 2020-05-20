@@ -7,7 +7,9 @@
   <title>SIGLAM | Log in</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <link rel="stylesheet" type="text/css" href="plugins/alertifyjs/css/alertify.css">
+  <link rel="stylesheet" type="text/css" href="plugins/alertifyjs/css/themes/default.css">  
+  <script src="plugins/alertifyjs/alertify.js"></script>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
   <!-- Ionicons -->
@@ -50,27 +52,19 @@
         </div>
         <div class="row">
           <div class="col-8">
-            <div class="icheck-primary">
-              <input type="checkbox" id="remember_me" name ="_remember_me">
-              <label for="remember">
-                Recuérdame
-              </label>
-            </div>
           </div>
           <!-- /.col -->
           <div class="col-4">
-            <button onclick="iniciar()" class="btn btn-primary btn-block" >Sign In</button>
+            <button onclick="iniciar()" class="btn btn-primary btn-block">Sign In</button>
           </div>
           <div class="col-4">
-            <button onclick="observador()" class="btn btn-primary btn-block" >vefiricar</button>
           </div>
           <!-- /.col -->
         </div>
       <p class="mb-1">
-        <a href="forgot-password.html">Olvidé mi Contraseña</a>
+        <a href="login/reset.html">Olvidé mi Contraseña</a>
       </p>
       <p class="mb-0">
-        <a href="register.html" class="text-center">Registrar</a>
       </p>
       <p><a href="login/root.html"><b>Administrador Login</b></a>
         </p>
@@ -110,3 +104,4 @@ firebase.auth().onAuthStateChanged(function(user) {
 }</script>
 </body>
 </html>
+
