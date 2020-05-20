@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>SIGLAM | Log in</title>
@@ -18,9 +19,9 @@
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   
-
 </head>
 <body class="hold-transition login-page">
+  <script src="conn.js"></script>
 <div class="login-box">
   <div class="login-logo">
     <a><b>SIGLAM | </b>Login</a>
@@ -29,9 +30,7 @@
   <div class="card">
     <div class="card-body login-card-body">
       <p class="login-box-msg">Inicie sesion para realizar alguna operación
-    <?php if(!empty($message)): ?>
-      <p> <?= $message ?></p>
-    <?php endif; ?>
+
       
         <div class="input-group mb-3">
           <input type="email" id = email class="form-control" placeholder="Email">
@@ -62,6 +61,9 @@
           <div class="col-4">
             <button onclick="iniciar()" class="btn btn-primary btn-block" >Sign In</button>
           </div>
+          <div class="col-4">
+            <button onclick="observador()" class="btn btn-primary btn-block" >vefiricar</button>
+          </div>
           <!-- /.col -->
         </div>
       <p class="mb-1">
@@ -73,11 +75,10 @@
       <p><a href="login/root.html"><b>Administrador Login</b></a>
         </p>
     </div>
-    <!-- /.login-card-body -->
+
   </div>
 </div>
-<!-- /.login-box -->
-<!-- jQuery -->
+
 <script src="plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -85,7 +86,7 @@
 <script src="dist/js/adminlte.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script>
-<script src="login/conn.js"></script>
+<script src="conn.js"></script>
 <script>
 var firebaseConfig = {
     apiKey: "AIzaSyBSJKpoQLymKGq5jogxcRBXmdje2O37qy4",
@@ -97,7 +98,15 @@ var firebaseConfig = {
     appId: "1:96295527901:web:78ef350751292db0198234",
     measurementId: "G-HJNKDL5BH3"
   };
-  // Initialize Firebase
 firebase.initializeApp(firebaseConfig);</script>
+  <script type="text/javascript">
+  window.onload = function observador(){
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    window.location = "inicio.php"
+  } else {
+  }
+});
+}</script>
 </body>
 </html>
