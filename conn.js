@@ -32,6 +32,10 @@ firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error
   if (resolve != null){
     window.location = "../inicio.php"
   }
+  else
+  {
+{alertify.error("Correo o contraseña incorrectos");}
+  }
 });
 }
 
