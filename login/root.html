@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>SIGLAM | Log in</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- icheck bootstrap -->
+  <link rel="stylesheet" href="../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  
+
+</head>
+<body class="hold-transition login-page">
+<div class="login-box">
+  <div class="login-logo">
+    <a><b>SIGLAM | </b>Login Root</a>
+  </div>
+  <!-- /.login-logo -->
+  <div class="card">
+    <div class="card-body login-card-body">
+      <p class="login-box-msg">Inicie sesión para administrar la página      
+        <div class="input-group mb-3">
+          <input type="email" id = email class="form-control" placeholder="Email">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="password" id = password class="form-control" placeholder="Password" autocomplete="off" >
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-8">
+            <div class="icheck-primary">
+              <input type="checkbox" id="remember_me" name ="_remember_me">
+              <label for="remember">
+                Recuérdame
+              </label>
+            </div>
+          </div>
+          <!-- /.col -->
+          <div class="col-4">
+            <button onclick="iniciarroot()" class="btn btn-primary btn-block" >Sign In</button>
+          </div>
+          <!-- /.col -->
+        </div>
+      <p class="mb-1">
+        <a href="forgot-password.html">Olvidé mi Contraseña</a>
+      </p>
+      <p class="mb-0">
+        <a href="register.html" class="text-center">Registrar</a>
+      </p>
+      <p><a href="../index.html"><b>Usuario Login</b></a>
+        </p>
+    </div>
+    <!-- /.login-card-body -->
+  </div>
+</div>
+<!-- /.login-box -->
+<!-- jQuery -->
+<script src="../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../dist/js/adminlte.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script>
+<script src="../conn.js"></script>
+<script>
+var firebaseConfig = {
+    apiKey: "AIzaSyBSJKpoQLymKGq5jogxcRBXmdje2O37qy4",
+    authDomain: "siglam-98442.firebaseapp.com",
+    databaseURL: "https://siglam-98442.firebaseio.com",
+    projectId: "siglam-98442",
+    storageBucket: "siglam-98442.appspot.com",
+    messagingSenderId: "96295527901",
+    appId: "1:96295527901:web:78ef350751292db0198234",
+    measurementId: "G-HJNKDL5BH3"
+  };
+  // Initialize Firebase
+firebase.initializeApp(firebaseConfig);</script>
+<script type="text/javascript">
+  window.onload = function observador(){
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    window.location = "../inicio.php"
+  } else {
+  }
+});
+}</script>
+</body>
+</html>
