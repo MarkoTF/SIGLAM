@@ -113,6 +113,7 @@ class Template
                           <!-- /.sidebar-menu -->
                         </div>
                         <!-- /.sidebar -->
+			<button onclick="confirmar()" class="btn btn-primary btn-block" >cerrar</button>
                       </aside>';
 		return $menuLateral;
 	}
@@ -221,3 +222,7 @@ class Template
 
 
 ?>
+<script src="conn.js"></script>
+<link rel="stylesheet" type="text/css" href="./plugins/alertifyjs/css/alertify.css">
+  <link rel="stylesheet" type="text/css" href="./plugins/alertifyjs/css/themes/default.css">  
+  <script src="plugins/alertifyjs/alertify.js"></script>
