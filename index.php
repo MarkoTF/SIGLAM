@@ -7,9 +7,72 @@
   <div class="row">
     <div class="col-md-12">
       <h1>Página principal</h1>
+
+
+
+		<!-- Boton que llama al modal para actualiar -->
+		<button class="btn btn-primary" data-toggle="modal" data-target="#modalActualizar">
+		    Actualizar
+		</button>
+
+		<!-- Modal para actualizar -->
+		<div class="modal fade" id="modalActualizar" role="dialog">
+		    <div class="modal-dialog">
+		        <div class="modal-content">
+		            <!-- Modal Header -->
+		            <div class="modal-header">
+		                <h4 class="modal-title" id="myModalLabel">Actualizar información</h4>
+		                <button type="button" class="close" data-dismiss="modal">
+		                    <span aria-hidden="true">×</span>
+		                    <span class="sr-only">Close</span>
+		                </button>
+		            </div>
+		            
+		            <!-- Modal Body -->
+		            <div class="modal-body">
+		                <p class="statusMsg"></p>
+		                <form role="form" id="formUpdate">
+		                    <div class="form-group">
+		                        <label for="nombreHerramienta">Nombre</label>
+		                        <input type="text" class="form-control" id="nombreHerramienta"/>
+		                    </div>
+		                    <div class="form-group">
+		                        <label for="modeloHerramienta">Modelo</label>
+		                        <input type="email" class="form-control" id="modeloHerramienta"/>
+		                    </div>
+		                    <div class="form-group">
+		                        <label for="descripcionHerramienta">Descripción</label>
+		                        <textarea class="form-control" id="descripcionHerramienta"></textarea>
+		                    </div>
+		                </form>
+		            </div>
+		            
+		            <!-- Modal Footer -->
+		            <div class="modal-footer">
+		                <button id="btnCerrar" type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+		                <button type="button" class="btn btn-success" onclick="submitUpdate()">Actualizar</button>
+		            </div>
+		        </div>
+		    </div>
+		</div>
     </div>
   </div>  
 </div>
+
+<div id="test">
+	
+</div>
+
+
+
+
+
+
+
+
+
+
+
 
 <?php
 	$Template->bodyButton();
@@ -68,5 +131,6 @@
   firebase.analytics();
 </script>
 
+<script type="text/javascript" src="funciones.js"></script>
 
 <script src=""></script>
