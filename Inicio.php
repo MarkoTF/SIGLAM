@@ -74,6 +74,8 @@
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
 <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script>
+<script src="conn.js"></script>
 
 <script>
   // Your web app's Firebase configuration
@@ -95,3 +97,17 @@
 <script type="text/javascript" src="funciones.js"></script>
 
 <script src=""></script>
+
+  <script type="text/javascript">
+  window.onload = function observador(){
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    alertify.success("Sesion iniciada");
+  } else {
+  	window.location = "index.html"
+  }
+});
+}</script>
+<link rel="stylesheet" type="text/css" href="plugins/alertifyjs/css/alertify.css">
+ <link rel="stylesheet" type="text/css" href="plugins/alertifyjs/css/themes/default.css">  
+ <script src="plugins/alertifyjs/alertify.js"></script>
