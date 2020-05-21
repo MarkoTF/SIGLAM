@@ -9,32 +9,42 @@ firebase.initializeApp({
 //Agregar documentos.
 var db = firebase.firestore();
 function agregar(){
-	
 
 	var name = document.getElementById('n').value;
 	var model= document.getElementById('m').value;
 	var description = document.getElementById('d').value;
 	var category = document.getElementById('c').value;
 	var total = document.getElementById('t').value;
+	
+	if (name!='' & model!='' & description!='' & category!='' & total!='') {
+		
+		swal("Agregado", "", "success")
 
-	db.collection("Inventario").add({ 
-		Nombre: name,
-		Modelo: model,
-		Descripcion: description,
-		Categoria:category,
-		Cantidad:total
-	})
-	.then(function(docRef) {
-		console.log("Document written with ID: ", docRef.id);
-		document.getElementById('n').value = '';
-		document.getElementById('m').value = '';
-		document.getElementById('d').value = '';
-		document.getElementById('c').value = '';
-		document.getElementById('t').value = '';
-	})
-	.catch(function(error) {
-		console.error("Error adding document: ", error);
-	});
+		db.collection("Inventario").add({ 
+			Nombre: name,
+			Modelo: model,
+			Descripcion: description,
+			Categoria:category,
+			Cantidad:total
+		})
+		.then(function(docRef) {
+			console.log("Document written with ID: ", docRef.id);
+			document.getElementById('n').value = '';
+			document.getElementById('m').value = '';
+			document.getElementById('d').value = '';
+			document.getElementById('c').value = '';
+			document.getElementById('t').value = '';
+		})
+		.catch(function(error) {
+			console.error("Error adding document: ", error);
+		});
+
+	}else{
+		
+		swal("Llenar todos los campos", "", "error")
+	}
+
+
 
 }
 
@@ -110,4 +120,3 @@ function modificar(id,Nombre,Modelo,Descripcion,Categoria,Cantidad){
 		});
 	}
 }
- 
