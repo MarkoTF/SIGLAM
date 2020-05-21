@@ -102,7 +102,6 @@
   window.onload = function observador(){
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
-    alertify.success("Sesion iniciada");
   } else {
   	window.location = "index.html"
   }
