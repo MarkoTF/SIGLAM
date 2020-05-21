@@ -54,7 +54,7 @@
       					</div>
               </div>
               <div class="card-footer">
-                <button href="#" class="btn btn-info" id ="Bot" onclick="agregar()">Guardar</button>
+                <button href="#" class="btn btn-info" id ="Bot" onclick="agregar()">Agregar</button>
               </div>
             </div>
 
