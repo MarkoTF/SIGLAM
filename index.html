@@ -97,6 +97,7 @@ firebase.initializeApp(firebaseConfig);</script>
   window.onload = function observador(){
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
+    
     window.location = "inicio.php"
   } else {
   }

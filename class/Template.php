@@ -1,25 +1,25 @@
-﻿<?php
+<?php
 
 class Template
 {
-	public $ruta = '';
-	public $url;
+  public $ruta = '';
+  public $url;
 
-	/*
-	*	Metodo constructor de la clase Template
-	*/
-	public function __construct($ruta)
-	{
-		$this->ruta = $ruta;
-		$this->url = $_SERVER['REQUEST_URI'];
-	}
+  /*
+  * Metodo constructor de la clase Template
+  */
+  public function __construct($ruta)
+  {
+    $this->ruta = $ruta;
+    $this->url = $_SERVER['REQUEST_URI'];
+  }
 
-	/*
-	*	Metodo constructor del encabezado de la pagina, con las referencias a los archivos css
-	*/
-	public function getHead()
-	{
-		$head = '<!DOCTYPE html>
+  /*
+  * Metodo constructor del encabezado de la pagina, con las referencias a los archivos css
+  */
+  public function getHead()
+  {
+    $head = '<!DOCTYPE html>
                 <html>
                 <head>
                   <meta charset="utf-8">
@@ -27,7 +27,6 @@ class Template
                   <title>SIGLAM</title>
                   <!-- Tell the browser to be responsive to screen width -->
                   <meta name="viewport" content="width=device-width, initial-scale=1">
-
                   <!-- Font Awesome -->
                   <link rel="stylesheet" href="'.$this->ruta.'plugins/fontawesome-free/css/all.min.css">
                   <!-- Ionicons -->
@@ -37,16 +36,16 @@ class Template
                   <!-- Google Font: Source Sans Pro -->
                   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
                 </head>';
-		return $head;
-	}
+    return $head;
+  }
 
-	/*
-	* Metodo constructor del menu lateral
-	*/
-	public function menuLateral()
-	{
+  /*
+  * Metodo constructor del menu lateral
+  */
+  public function menuLateral()
+  {
 
-		$menuLateral = '  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    $menuLateral = '  <aside class="main-sidebar sidebar-dark-primary elevation-4">
                         <!-- Brand Logo -->
                         <a href="'.$this->ruta.'index.php" class="brand-link">
                           <img src="'.$this->ruta.'dist/img/logo.png"
@@ -55,7 +54,6 @@ class Template
                                style="opacity: 1">
                           <span class="brand-text font-weight-light">SIGLAM</span>
                         </a>
-
                         <!-- Sidebar -->
                         <div class="sidebar">
                           <!-- Sidebar user (optional) -->
@@ -67,7 +65,6 @@ class Template
                               <a href="#" class="d-block">Administrador</a>
                             </div>
                           </div>
-
                           <!-- Sidebar Menu -->
                           <nav class="mt-2">
                             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -114,15 +111,15 @@ class Template
                         </div>
                         <!-- /.sidebar -->
                       </aside>';
-		return $menuLateral;
-	}
+    return $menuLateral;
+  }
 
-	/*
-	* Metodo constructor del menu usuario
-	*/
-	public function menuUsuario()
-	{
-		$menuUsuario = '  <!-- Navbar -->
+  /*
+  * Metodo constructor del menu usuario
+  */
+  public function menuUsuario()
+  {
+    $menuUsuario = '  <!-- Navbar -->
                         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
                           <!-- Left navbar links -->
                           <ul class="navbar-nav">
@@ -130,7 +127,6 @@ class Template
                               <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                             </li>
                           </ul>
-
                           <!-- SEARCH FORM -->
                        <!--   <form class="form-inline ml-3">
                             <div class="input-group input-group-sm">
@@ -142,7 +138,6 @@ class Template
                               </div>
                             </div>
                           </form> -->
-
                           <!-- Right navbar links -->
                           <ul class="navbar-nav ml-auto">
                             <!-- Messages Dropdown Menu -->
@@ -154,30 +149,30 @@ class Template
                             </li>
                           </ul>
                         </nav>';
-		        return $menuUsuario;
-	}
+            return $menuUsuario;
+  }
 
-	/*
-	* Metodo constructor de la parte superior de la pagina
-	*/
-	public function bodyTop()
-	{
-		$bodyTop = 	$this->getHead().'
+  /*
+  * Metodo constructor de la parte superior de la pagina
+  */
+  public function bodyTop()
+  {
+    $bodyTop =  $this->getHead().'
             <body class="hold-transition sidebar-mini">
               <!-- Site wrapper -->
               <div class="wrapper">
                 '.$this->menuUsuario().'
                       '.$this->menuLateral().'
                         <div class="content-wrapper">';
-		echo $bodyTop;
-	}
+    echo $bodyTop;
+  }
 
-	/*
-	* Metodo constructor de la parte inferior de la pagina
-	*/
-	public function bodyButton()
-	{
-		$bodyButton = '</div>
+  /*
+  * Metodo constructor de la parte inferior de la pagina
+  */
+  public function bodyButton()
+  {
+    $bodyButton = '</div>
                     <footer class="main-footer">
                         <div class="float-right d-none d-sm-block">
                           <small>Ingeniería en Sistemas Computacionales</small>
@@ -190,15 +185,15 @@ class Template
                         </aside>
                   </div>
                   '.$this->getFooter();
-		echo $bodyButton;
-	}
+    echo $bodyButton;
+  }
 
-	/*
-	* Metodo constructor del pie de la pagina, con las referencias a los archivos javascript
-	*/
-	public function getFooter()
-	{
-		$footer = '<script src="'.$this->ruta.'plugins/jquery/jquery.min.js"></script>
+  /*
+  * Metodo constructor del pie de la pagina, con las referencias a los archivos javascript
+  */
+  public function getFooter()
+  {
+    $footer = '<script src="'.$this->ruta.'plugins/jquery/jquery.min.js"></script>
                 <!-- Bootstrap 4 -->
                 <script src="'.$this->ruta.'plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
                 <!-- AdminLTE App -->
@@ -207,21 +202,22 @@ class Template
                 <script src="'.$this->ruta.'dist/js/demo.js"></script>
               </body>
             </html>';
-		return $footer;
-	}
+    return $footer;
+  }
 
-	/*
-	* Metodo destructor de la clase Template
-	*/
-	public function __destruct()
-	{
-		unset($this->ruta);
-		unset($this->url);
-	}
+  /*
+  * Metodo destructor de la clase Template
+  */
+  public function __destruct()
+  {
+    unset($this->ruta);
+    unset($this->url);
+  }
 }
 
 
 ?>
+  
 <script src="conn.js"></script>
 <link rel="stylesheet" type="text/css" href="./plugins/alertifyjs/css/alertify.css">
   <link rel="stylesheet" type="text/css" href="./plugins/alertifyjs/css/themes/default.css">  

@@ -7,14 +7,12 @@ firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error
   // Handle Errors here.
   var errorCode = error.code;
   var errorMessage = error.message;
-  // ...
+  alertify.error("Correo o contraseña incorrectos");
 }).then(function(resolve){
   if (resolve != null){
+    
     window.location = "inicio.php"
-    alertify.success("Error en sus credenciales");
   }
-  else
-    {alertify.error("Correo o contraseña incorrectos");}
 });
 }
 
@@ -27,14 +25,14 @@ firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error
   // Handle Errors here.
   var errorCode = error.code;
   var errorMessage = error.message;
-  // ...
+  alertify.error("Correo o contraseña incorrectos");
 }).then(function(resolve){
   if (resolve != null){
     window.location = "../inicio.php"
   }
   else
   {
-{alertify.error("Correo o contraseña incorrectos");}
+{}
   }
 });
 }
@@ -61,9 +59,7 @@ firebase.auth().sendPasswordResetEmail(emailAddress).then(function() {
 function confirmar(){
 
   alertify.confirm('Salir', '¿Seguro que deseas salir?', function(){ 
-    cerrar();
-    alertify.success('Ok') 
-  }
-                , function(){});
+    cerrar();}
+  , function(){});
 
 }

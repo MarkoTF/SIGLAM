@@ -100,10 +100,14 @@
 
   <script type="text/javascript">
   window.onload = function observador(){
+  	
 firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {
-    alertify.success("Sesion iniciada");
-  } else {
+  if (user) 
+  {
+  	    
+  } 
+  else 
+  {
   	window.location = "index.html"
   }
 });
