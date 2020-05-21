@@ -113,7 +113,6 @@ class Template
                           <!-- /.sidebar-menu -->
                         </div>
                         <!-- /.sidebar -->
-			<button onclick="confirmar()" class="btn btn-primary btn-block" >cerrar</button>
                       </aside>';
 		return $menuLateral;
 	}
@@ -148,6 +147,7 @@ class Template
                           <ul class="navbar-nav ml-auto">
                             <!-- Messages Dropdown Menu -->
                             <li class="nav-item dropdown"> 
+                                  <button onclick="confirmar()" class="btn btn-danger btn-block" >Cerrar sesión</button>
                             </li>
                             <!-- Notifications Dropdown Menu -->
                             <li class="nav-item dropdown">
