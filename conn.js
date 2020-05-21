@@ -65,21 +65,21 @@ var emailAddress = document.getElementById("emailadress").value;
 
 firebase.auth().sendPasswordResetEmail(emailAddress).then(function() {
   swal({
-  title: "Correo enviado" ,
+  title: "Email enviado" ,
   text: "Ingrese al enlace para restablecer su contraseña" ,
   icon: "success",
   button: true
 }).then((value) => {
-  window.location = "/siglam/index.html"
+  window.location = "/SIGLAM/index.html"
 });
 }).catch(function(error) {
     swal({
-  title: "Correo No enviado" ,
-  text: "Su Correo podria no estar registrado" ,
+  title: "Correo no enviado" ,
+  text: "Su correo no esta registrado" ,
   icon: "error",
   button: true
 }).then((value) => {
-  window.location = "/siglam/index.html"
+  window.location = "/SIGLAM/index.html"
 });
 });
 
@@ -87,7 +87,7 @@ firebase.auth().sendPasswordResetEmail(emailAddress).then(function() {
 function confirmar(){
 
   swal({
-  title: "¿Esta Seguro?",
+  title: "¿Estas Seguro?",
   icon: "warning",
   buttons: ["Cancelar", "Salir"],
   dangerMode: true,
