@@ -141,3 +141,4 @@ firebase.auth().onAuthStateChanged(function(user) {
 <link rel="stylesheet" type="text/css" href="plugins/alertifyjs/css/alertify.css">
  <link rel="stylesheet" type="text/css" href="plugins/alertifyjs/css/themes/default.css">  
  <script src="plugins/alertifyjs/alertify.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
