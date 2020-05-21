@@ -9,73 +9,82 @@
 
 
 <br>
-    <section class="content">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="card card-primary">
-              <div class="card-header">
-                <h3 class="card-title">AGREGAR NUEVAS HERRAMIENTAS</h3>
+
+<section class="content">
+  <div class="container-fluid container">
+
+    <div class="card card-info">
+        <div class="card-header">
+          <b>AGREGAR NUEVAS HERRAMIENTAS</b> 
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group">
+                <input type="text" id = "n" name="nombre" placeholder="Nombre" class="form-control my-3" required>
               </div>
-              <div class="card-body row">
-              	<div class="col-md-4">
-						      <div class="form-group">
-							       <label>Nombre de Herramienta:</label>
-                      <input type="text" id = "n" name="nombre" placeholder="Nombre" class="form-control" required>
-						      </div>
-					      </div>
-					     <div class="col-md-4">
-						      <div class="form-group">
-							      <label>Modelo:</label>
-	               		<input type="text" id = "m" name="modelo" placeholder="Modelo" class="form-control" required>
-						      </div>
-					      </div>
-					     <div class="col-md-4">
-						      <div class="form-group">
-							   <label>Descripción:</label>
-	               	<input type="text" id = "d"  name="descripcion" placeholder="Descripcion" class="form-control" required>
-						    </div>
-					     </div>
-					     <div class="col-md-4">
-					     	  <div class="form-group">
-					     		   <label>Categoría:</label>
-	                   <input type="text" id = "c" name="categoria" placeholder="Categoria" class="form-control" required>
-					       	</div>
-					     </div>
-      					<div class="col-md-4">
-      						<div class="form-group">
-      							 <label>Cantidad:</label>
-      	             <input type="text" id = "t" name="cantidad" placeholder="Cantidad" class="form-control" required>
-      						</div>
-      					</div>
-              </div>
-              <div class="card-footer">
-                <button href="#" class="btn btn-info" id ="Bot" onclick="agregar()">Agregar</button>
-              </div>                
             </div>
-
-            <div class="table-responsive" align="center">
-              <table class="table table-bordered">
-                <thead id="Encabezado">
-                  <tr>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Modelo</th>
-                    <th scope="col">Descripción</th>
-                    <th scope="col">Categoría</th>
-                    <th scope="col">Cantidad</th>
-                    <th scope="col">Editar</th>
-                    <th scope="col">Eliminar</th>
-                  </tr>
-                </thead>
-
-                <tbody id = "table">
-                </tbody>
-              </table>   
+            <div class="col-md-4">
+              <div class="form-group">
+                <input type="text" id = "m" name="modelo" placeholder="Modelo" class="form-control my-3" required>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <input type="text" id = "d"  name="descripcion" placeholder="Descripcion" class="form-control my-3" required>
+              </div>
+            </div>
           </div>
 
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group">
+                <input type="text" id = "c" name="categoria" placeholder="Categoria" class="form-control my-3" required>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group">
+                <input type="text" id = "t" name="cantidad" placeholder="Cantidad" class="form-control my-3" required>
+              </div>
+            </div>
+          </div>
+
+
+
+       <!-- <input type="text" id = "n" name="nombre" placeholder="Nombre" class="form-control my-3" required>
+            <input type="text" id = "m" name="modelo" placeholder="Modelo" class="form-control my-3" required>
+            <input type="text" id = "d"  name="descripcion" placeholder="Descripcion" class="form-control my-3" required>
+            <input type="text" id = "c" name="categoria" placeholder="Categoria" class="form-control my-3" required>
+            <input type="text" id = "t" name="cantidad" placeholder="Cantidad" class="form-control my-3" required> -->
+
+            <br>
+            
+            <button href="#" class="btn btn-info" id ="Bot" onclick="agregar()">Guardar</button>
         </div>
-      </div>
-    </section>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table my-3">
+        <thead style="background-color: #dc3545; color: white; font-weight: bold;">
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Modelo</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Categoría</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Editar</th>
+            <th scope="col">Eliminar</th>
+          </tr>
+        </thead>
+
+        <tbody id = "table">
+        </tbody>
+      </table>  
+    </div>
+
+
+  </div>
+</section>
 
 
 <style type="text/css">

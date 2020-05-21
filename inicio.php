@@ -10,21 +10,47 @@
           <!-- left column -->
           <div class="col-md-12">
             <!-- general form elements -->
-            <div class="card card-info">
+            <div class="card card-danger">
               <div class="card-header">
-                <h3 class="card-title">Bienvenido/a al Sistema de Gestión de Laboratorio Multidisciplinario.</h3>
-              </div>
-              <!-- /.card-header -->
-              <!-- form start -->
-              <form action="" role="form">
+              <!--  <h3 class="card-title">Bienvenido/a al Sistema de Gestión de Laboratorio Multidisciplinario.</h3> -->
+              <h3 class="card-title"> <b>¿QUÉ ES SIGLAM?</b>  </h3>
+              </div>              
+              <form role="form">
                 <div class="card-body">
-                </div>
-                <div class="card-footer">
+                  Es un sistema de gestión que busca tener un control sobre un inventario de herramientas, laboratorios y aulas. Esto, ayudará a realizar las acciones necesarias de manera más eficiente,sencilla y confiable; y por esta razón permite tener una excente administración para una institución educativa, especialmente cuando se generan prestámos tanto de herramientas, laboratorios y/o aulas.
                 </div>
               </form>
             </div>
-
           </div>
+
+          <div class="col-md-6">
+            <div class="card card-info">
+              <div class="card-header">
+                <h3 class="card-title"> <b>PROPÓSITO</b></h3>
+              </div>
+              <form action="" role="form">
+                <div class="card-body" style="text-align: justify">
+                  El sistema cumpla con la necesidad de los distintos talleres donde se realicen préstamos de herramientas y laboratorios y/o aulas, para que de esta forma tener un control del inventario más eficiente y fácil de usar para el personal.
+                </div>
+                <br><br>
+              </form>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="card card-success">
+              <div class="card-header">
+                <h3 class="card-title"> <b>POLÍTICA DEL TECNOLÓGICO</b></h3>
+              </div>
+              <form action="" role="form">
+                <div class="card-body" style="text-align: justify">
+                  El Tecnológico Nacional de México (TecNM) establece el compromiso de implementar todos sus procesos, orientándose hacia la satisfacción de sus clientes, sustentada en la calidad del proceso educativo, para cumplir con sus requisitos, mediante la eficacia de un sistema de gestión de la calidad y de mejora continua, conforme a la norma ISO 9001:2008/NMX-CC-9001-IMNC-2008.
+                </div>
+              </form>
+            </div>
+          </div>
+
+
           <!--/.col (left) -->
           <!-- right column -->
 
