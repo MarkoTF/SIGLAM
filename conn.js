@@ -7,10 +7,16 @@ firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error
   // Handle Errors here.
   var errorCode = error.code;
   var errorMessage = error.message;
-  alertify.error("Correo o contraseña incorrectos");
+  swal({
+  title: "Intente de nuevo" ,
+  text: "Correo o contraseña incorrectos" ,
+  icon: "error",
+  timer: 2000,
+  button: false
+});
 }).then(function(resolve){
   if (resolve != null){
-    
+
     window.location = "inicio.php"
   }
 });
@@ -25,7 +31,15 @@ firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error
   // Handle Errors here.
   var errorCode = error.code;
   var errorMessage = error.message;
-  alertify.error("Correo o contraseña incorrectos");
+   //using custom CSS
+ // .ajs-message.ajs-custom { color: #31708f;  background-color: #d9edf7;  border-color: #31708f; }
+  swal({
+  title: "Intente de nuevo" ,
+  text: "Correo o contraseña incorrectos" ,
+  icon: "error",
+  timer: 2000,
+  button: false
+});
 }).then(function(resolve){
   if (resolve != null){
     window.location = "../inicio.php"
@@ -50,16 +64,39 @@ function reset(){
 var emailAddress = document.getElementById("emailadress").value;
 
 firebase.auth().sendPasswordResetEmail(emailAddress).then(function() {
-  
+  swal({
+  title: "Email enviado" ,
+  text: "Ingrese al enlace para restablecer su contraseña" ,
+  icon: "success",
+  button: true
+}).then((value) => {
+  window.location = "/SIGLAM/index.html"
+});
 }).catch(function(error) {
-  // An error happened.
+    swal({
+  title: "Correo no enviado" ,
+  text: "Su correo no esta registrado" ,
+  icon: "error",
+  button: true
+}).then((value) => {
+  window.location = "/SIGLAM/index.html"
+});
 });
 
 }
 function confirmar(){
 
-  alertify.confirm('Salir', '¿Seguro que deseas salir?', function(){ 
-    cerrar();}
-  , function(){});
+  swal({
+  title: "¿Estas Seguro?",
+  icon: "warning",
+  buttons: ["Cancelar", "Salir"],
+  dangerMode: true,
+})
+.then((willDelete) => {
+  if (willDelete) {
+    cerrar();
+  } else {
+  }
+});
 
 }

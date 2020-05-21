@@ -7,35 +7,31 @@
   <title>SIGLAM | Log in</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="plugins/alertifyjs/css/alertify.css">
-  <link rel="stylesheet" type="text/css" href="plugins/alertifyjs/css/themes/default.css">  
-  <script src="plugins/alertifyjs/alertify.js"></script>
+
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- icheck bootstrap -->
-  <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <link rel="stylesheet" href="../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="../dist/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   
 </head>
 <body class="hold-transition login-page">
-  <script src="conn.js"></script>
 <div class="login-box">
   <div class="login-logo">
-    <a><b>SIGLAM | </b>Login</a>
+    <a><b>SIGLAM | </b>Reset</a>
   </div>
   <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
-      <p class="login-box-msg">Inicie sesion para realizar alguna operación
-<form method="POST">
-      
+      <p class="login-box-msg">Ingrese su correo para restablecer su contraseña
+
         <div class="input-group mb-3">
-          <input type="email" id = email class="form-control" placeholder="Email">
+          <input type="email" id = emailadress class="form-control" placeholder="Email">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -43,44 +39,40 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" id = password class="form-control" placeholder="Password" autocomplete="off" >
           <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
-            </div>
           </div>
         </div>
-     <div class="row">
+        <div class="row">
           <div class="col-8">
-            <div class="">
-              <div><a href="login/root.html"><b>Administrador Login</b></a></div>
-            </div>
           </div>
           <!-- /.col -->
           <div class="col-4">
-            <button onclick="iniciar()" class="btn btn-primary btn-block" type="Button">Ingresar</button>
+            <button onclick="reset()" class="btn btn-primary btn-block" >Enviar</button>
           </div>
-          <!-- /.col --></form>
+          <div class="col-4">
+          </div>
+          <!-- /.col -->
         </div>
       <p class="mb-1">
-        <a href="login/reset.html">Olvidé mi Contraseña</a>
       </p>
       <p class="mb-0">
+
       </p>
       
+        </p>
     </div>
 
   </div>
 </div>
 
-<script src="plugins/jquery/jquery.min.js"></script>
+<script src="../plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
-<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
-<script src="dist/js/adminlte.min.js"></script>
+<script src="../dist/js/adminlte.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script>
-<script src="conn.js"></script>
+<script src="../conn.js"></script>
 <script>
 var firebaseConfig = {
     apiKey: "AIzaSyBSJKpoQLymKGq5jogxcRBXmdje2O37qy4",
@@ -97,8 +89,7 @@ firebase.initializeApp(firebaseConfig);</script>
   window.onload = function observador(){
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
-    
-    window.location = "inicio.php"
+    window.location = "index.html"
   } else {
   }
 });
