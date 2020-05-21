@@ -70,6 +70,7 @@ db.collection("Inventario").onSnapshot((querySnapshot) => {
 //Borrar documentos.
 function borrar(id){
 	db.collection("Inventario").doc(id).delete().then(function() {
+		swal("Eliminado con éxito", "", "success")
 		console.log("Document successfully deleted!");
 	}).catch(function(error) {
 		console.error("Error removing document: ", error);
@@ -106,6 +107,7 @@ function modificar(id,Nombre,Modelo,Descripcion,Categoria,Cantidad){
 			Cantidad:total
 		})
 		.then(function() {
+			swal("Actualizado", "", "success")
 			console.log("Document successfully updated!");
 			Boton.innerHTML = 'Guardar';
 			document.getElementById('n').value = '';
