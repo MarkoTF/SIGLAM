@@ -52,7 +52,6 @@ db.collection("alumnos").onSnapshot((querySnapshot) => {	//onSnapshot es para le
         console.log(`${doc.id} => ${doc.data().nombre}`);
         tabla.innerHTML += `
         	<tr>
-            	<td></td>
                 <td>${doc.data().nombre}</td>
                 <td>${doc.data().matricula}</td>
                 <td>${doc.data().carrera}</td>

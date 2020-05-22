@@ -11,6 +11,22 @@
 <section class="content">
   <div class="container-fluid container">
 
+    <section class="content-header"> <!--  Contendeor del header -->
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1></h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="inicio.php">Inicio</a></li>
+              <li class="breadcrumb-item active">Herramientas</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
     <div class="card card-info">
         <div class="card-header">
           <b>AGREGAR NUEVAS HERRAMIENTAS</b> 
@@ -139,3 +155,4 @@ firebase.auth().onAuthStateChanged(function(user) {
 </script>
 
 <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script>
+<script src="conn.js"></script>

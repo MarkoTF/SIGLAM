@@ -81,28 +81,15 @@ class Template
                                 </a>
                               </li>
                               <li class="nav-item">
+                                <a href="alumnos.php" class="nav-link">
+                                  <i class="far fa-user nav-icon"></i>
+                                  <p>Gestionar alumnos</p>
+                                </a>
+                              </li>
+                              <li class="nav-item">
                                 <a href="herramientas.php" class="nav-link">
-                                  <i class="fas fa-circle nav-icon"></i>
-                                  <p>Herramientas</p>
-                                </a>
-                              </li>
-                              <li class="nav-header">LABELS</li>
-                              <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                  <i class="nav-icon far fa-circle text-danger"></i>
-                                  <p class="text">Important</p>
-                                </a>
-                              </li>
-                              <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                  <i class="nav-icon far fa-circle text-warning"></i>
-                                  <p>Warning</p>
-                                </a>
-                              </li>
-                              <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                  <i class="nav-icon far fa-circle text-info"></i>
-                                  <p>Informational</p>
+                                  <i class="fas fa-tools nav-icon"></i>
+                                  <p>Gestionar Herramientas</p>
                                 </a>
                               </li>
                             </ul>
