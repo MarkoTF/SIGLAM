@@ -336,7 +336,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>Alumnos</h1>
+          <h1>Tabla de Alumnos</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
@@ -353,7 +353,7 @@
       <div class="col-12">
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title">Lista de alumnos dados de alta en el sistema.</h3>
+            <h3 class="card-title">Alumnos dados de alta en el sistema.</h3>
           </div>
 
           <div class="nuevo-al">
@@ -391,13 +391,13 @@
   </div>
 </section>
 
-<!-- empieza ventana modal -->
+<!-- empieza ventana modal para EDITAR-->
 
 <div class="modal fade" id="modalCRUD" tabindex="-1" role="dialog" aria-labelledby="exampleModallabel" aria-hidden="true"> 
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header" class="btn btn-primary">
-        <h5 class="modal-title" id="exampleModallabel"></h5>
+      <div id="header1" class="modal-header" class="btn btn-primary">
+        <h5 id="title1" class="modal-title" id="exampleModallabel"></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       </div>
       <!-- acá va el contenido del form -->
@@ -422,55 +422,54 @@
         </div>
         <div class="modal-footer"> <!-- FOOTER -->
           <button class="btn btn-default" data-dismiss="modal">Cancelar</button>
-          <button id="boton" class="btn btn-success mx-3 my-3" onclick="guardar()">Guardar</button>
+          <button id="boton" class="btn btn-success mx-3 my-3" onclick="guardar()">Editar</button>
         </div>
       </div>
     </div>
   </div>
-</div>
+</div><!-- Fin de la ventana modal -->
 
-<!-- Fin de la ventana modal -->
-<!-- Ventana modal -->
-<!-- <div class="modal fade" id="modalCRUD" tabindex="-1" role="dialog" aria-labelledby="exampleModallabel" aria-hidden="true">
+
+
+<!-- empieza ventana modal 2 para GUARDAR-->
+<div class="modal fade" id="modalCRUD2" tabindex="-1" role="dialog" aria-labelledby="exampleModallabel" aria-hidden="true"> 
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header" class="btn btn-primary">
-        <h5 class="modal-title" id="exampleModallabel"></h5>
-        <button type="button" class="close" data-dismiss="model" aria-label="Close"><samp aria-hidden="true">&times;</samp>
-        </button>
+      <div id="header2" class="modal-header" class="btn btn-primary">
+        <h5 id="title2" class="modal-title" id="exampleModallabel">Añadir nuevo Alumno</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       </div>
-      <form id="formPersonas">
-        <div class="modal-body">
+      <!-- acá va el contenido del form -->
+      <div id="formAlumno"> <!-- BODY -->
+        <div class="modal-body"> <!-- FORMULARIO -->
           <div class="form-group">
             <label for="nombre" class="col-form-label">Nombre</label>
-            <input type="text" class="form-control" id="inombre">
+            <input type="text" id="iinombre" placeholder="Ingrese su nombre" class="form-control my-1" required>  
           </div>
           <div class="form-group">
-            <label for="matricula" class="col-form-label">Matrícula</label>
-            <input type="text" class="form-control" id="imatricula">
+            <label for="nombre" class="col-form-label">Matrícula</label>
+            <input type="text" id="iimatricula" placeholder="Ingrese su matrícula" class="form-control my-1" required>
           </div>
           <div class="form-group">
-            <label for="carrera" class="col-form-label">Carrera</label>
-            <input type="text" class="form-control" id="icarrera">
+            <label for="nombre" class="col-form-label">Carrrera</label>
+            <input type="text" id="iicarrera" placeholder="Carrera" class="form-control my-1" required>
           </div>
           <div class="form-group">
-            <label for="semestre" class="col-form-label">Semestre</label>
-            <input type="text" class="form-control" id="isemestre">
+            <label for="nombre" class="col-form-label">Semestre</label>
+            <input type="text" id="iisemestre" placeholder="Semestre" class="form-control my-1" required>
           </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn bnt-light" data-dismiss="modal">Cancelar</button>
-          <button id="btnGuardar" class="btn bnt-info" onclick="guardar()">Guardar</button>
-          <button id="btnActualizar" class="btn bnt-info" onclick="actualizar()">Guardar</button>
+        <div class="modal-footer"> <!-- FOOTER -->
+          <button class="btn btn-default" data-dismiss="modal">Cancelar</button>
+          <button id="boton2" class="btn btn-success mx-3 my-3" onclick="guardar()">Guardar</button>
         </div>
-      </form>
+      </div>
     </div>
   </div>
-</div> -->
-
-
+</div><!-- Fin de la ventana modal -->
 
 </div>
+
 <!-- /.content-wrapper -->
 <footer class="main-footer">
   <div class="float-right d-none d-sm-block">

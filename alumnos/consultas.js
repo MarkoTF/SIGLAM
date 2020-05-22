@@ -8,24 +8,21 @@ firebase.initializeApp({
 //creamos objetos
 var db = firebase.firestore();
 
-
 //mostrar ventana al pulsar 'Nuevo'
 function nuevo(){
-	$('#inombre').trigger("reset");
-	$('#modalCRUD').modal('show');
-	$('.modal-header').css("background-color", "#28a745");
-	$('.modal-header').css("color", "#fff");
-	$('.modal-title').text('Añadir nuevo alumno')
-
+	$('#modalCRUD2').modal({backdrop: 'static', keyboard: false})
+	$('#modalCRUD2').modal('show');
+	$('#header2').css("background-color", "#28a745");
+	$('#header2').css("color", "#fff");
 }
 
 //agregar elementos
 function guardar(){
 
-	var nom = document.getElementById("inombre").value;
-	var mat = document.getElementById("imatricula").value;
-	var car = document.getElementById("icarrera").value;
-	var sem = document.getElementById("isemestre").value;
+	var nom = document.getElementById("iinombre").value;
+	var mat = document.getElementById("iimatricula").value;
+	var car = document.getElementById("iicarrera").value;
+	var sem = document.getElementById("iisemestre").value;
 
 	db.collection("alumnos").add({
 		nombre: nom,
@@ -35,11 +32,11 @@ function guardar(){
 	})
 	.then(function(docRef) {
 		console.log("Se ha escrito un nuevo ID: ", docRef.id);
-		document.getElementById("inombre").value = '';
-		document.getElementById("imatricula").value = '';
-		document.getElementById("icarrera").value = '';
-		document.getElementById("isemestre").value = '';
-		$('#modalCRUD').modal('hide')
+		document.getElementById("iinombre").value = '';
+		document.getElementById("iimatricula").value = '';
+		document.getElementById("iicarrera").value = '';
+		document.getElementById("iisemestre").value = '';
+		$('#modalCRUD2').modal('hide')
 	})
 	.catch(function(error) {
 		console.error("Error al añadir elemento: ", error);
@@ -85,9 +82,10 @@ function eliminar(id){
 function editar(id, nombre, matricula, carrera, semestre){
 
 	/* Mostrar ventana modal */
+	$('#modalCRUD').modal({backdrop: 'static', keyboard: false})
 	$('.modal-header').css("background-color", "#F1D41E");
-	$('.modal-header').css("color", "#fff");
-	$('.modal-title').text('Editar información de ' + nombre)
+	$('#header1').css("color", "#fff");
+	$('#title1').text('Editar información de ' + nombre)
 	$('#modalCRUD').modal('show')
 
 	//iniciamos las varialbles
@@ -97,8 +95,8 @@ function editar(id, nombre, matricula, carrera, semestre){
 	document.getElementById('isemestre').value = semestre;
 
 	var btnE = document.getElementById('boton');
-	btnE.innerHTML = 'Editar';
-
+	/*btnE.innerHTML = 'Editar';
+*/
 	btnE.onclick = function(){
 		var washingtonRef = db.collection("alumnos").doc(id);
 
@@ -121,7 +119,6 @@ function editar(id, nombre, matricula, carrera, semestre){
 		document.getElementById("icarrera").value = '';
 		document.getElementById("isemestre").value = '';
 		$('#modalCRUD').modal('hide')
-		btnE.innerHTML = 'Guardar';
 	})
 	.catch(function(error) {
     	// The document probably doesn't exist.
