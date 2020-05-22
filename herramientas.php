@@ -4,8 +4,8 @@
 	$Template->bodyTop();	
 ?>
 
-  <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
 
 <br>
 <section class="content">
@@ -152,6 +152,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     window.location = "index.html"
   }
 });
+  }
 </script>
 
 <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script>
