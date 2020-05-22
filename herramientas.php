@@ -63,7 +63,8 @@
 
             <br>
             
-            <button type="submit" class="btn btn-info" id="Bot" onclick="agregar()">Guardar</button>
+            <button type="submit" class="btn btn-info" id="Bot" onclick="agregar()" required>Guardar</button>
+             <button type="submit" class="btn btn-info" id="Act" onclick="modificar()" disabled>Actualizar</button>
 
         </div>
     </div>

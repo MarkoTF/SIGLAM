@@ -87,9 +87,11 @@ function modificar(id,Nombre,Modelo,Descripcion,Categoria,Cantidad){
 	document.getElementById('d').value = Descripcion;
 	document.getElementById('c').value = Categoria;
 	document.getElementById('t').value = Cantidad;
-	var Boton = document.getElementById('Bot')
-	Boton.innerHTML = 'Actualizar';
+	var Boton = document.getElementById('Bot');
+	var Bot = document.getElementById('Act')
 
+	Boton.disabled = true;
+	Bot.disabled = false;
 	Boton.onclick = function(){
 
 		var washingtonRef = db.collection("Inventario").doc(id);
@@ -109,7 +111,8 @@ function modificar(id,Nombre,Modelo,Descripcion,Categoria,Cantidad){
 		.then(function() {
 			swal("Actualizado", "", "success")
 			console.log("Document successfully updated!");
-			Boton.innerHTML = 'Guardar';
+			Boton.disabled = true;
+			Bot.disabled = false;
 			document.getElementById('n').value = '';
 			document.getElementById('m').value = '';
 			document.getElementById('d').value = '';
