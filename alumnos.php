@@ -61,8 +61,8 @@
                   <th>Matrícula</th>
                   <th>Carrera</th>
                   <th>Semestre</th>
-                  <th>Eliminar</th>
                   <th>Editar</th>
+                  <th>Eliminar</th>
                 </tr>
               </thead>
               <tbody id="tabla_al">   <!-- Valores  -->
