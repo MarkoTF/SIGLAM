@@ -22,6 +22,7 @@ class Template
     $head = '<!DOCTYPE html>
                 <html>
                 <head>
+                <link  rel="icon"   href="dist/img/logo.png" type="image/png" />
                   <meta charset="utf-8">
                   <meta http-equiv="X-UA-Compatible" content="IE=edge">
                   <title>SIGLAM</title>
