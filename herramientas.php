@@ -92,7 +92,7 @@
             <th scope="col">Nombre</th>
             <th scope="col">Modelo</th>
             <th scope="col">Descripción</th>
-            <th scope="col">Categoría</th>
+            <th scope="col">Anquel</th>
             <th scope="col">Cantidad</th>
             <th scope="col">Editar</th>
             <th scope="col">Eliminar</th>
