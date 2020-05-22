@@ -9,32 +9,42 @@ firebase.initializeApp({
 //Agregar documentos.
 var db = firebase.firestore();
 function agregar(){
-	
 
 	var name = document.getElementById('n').value;
 	var model= document.getElementById('m').value;
 	var description = document.getElementById('d').value;
 	var category = document.getElementById('c').value;
 	var total = document.getElementById('t').value;
+	
+	if (name!='' & model!='' & description!='' & category!='' & total!='') {
+		
+		swal("Agregado", "", "success")
 
-	db.collection("Inventario").add({ 
-		Nombre: name,
-		Modelo: model,
-		Descripcion: description,
-		Categoria:category,
-		Cantidad:total
-	})
-	.then(function(docRef) {
-		console.log("Document written with ID: ", docRef.id);
-		document.getElementById('n').value = '';
-		document.getElementById('m').value = '';
-		document.getElementById('d').value = '';
-		document.getElementById('c').value = '';
-		document.getElementById('t').value = '';
-	})
-	.catch(function(error) {
-		console.error("Error adding document: ", error);
-	});
+		db.collection("Inventario").add({ 
+			Nombre: name,
+			Modelo: model,
+			Descripcion: description,
+			Categoria:category,
+			Cantidad:total
+		})
+		.then(function(docRef) {
+			console.log("Document written with ID: ", docRef.id);
+			document.getElementById('n').value = '';
+			document.getElementById('m').value = '';
+			document.getElementById('d').value = '';
+			document.getElementById('c').value = '';
+			document.getElementById('t').value = '';
+		})
+		.catch(function(error) {
+			console.error("Error adding document: ", error);
+		});
+
+	}else{
+		
+		swal("Llenar todos los campos", "", "error")
+	}
+
+
 
 }
 
@@ -60,6 +70,7 @@ db.collection("Inventario").onSnapshot((querySnapshot) => {
 //Borrar documentos.
 function borrar(id){
 	db.collection("Inventario").doc(id).delete().then(function() {
+		swal("Eliminado con éxito", "", "success")
 		console.log("Document successfully deleted!");
 	}).catch(function(error) {
 		console.error("Error removing document: ", error);
@@ -76,9 +87,12 @@ function modificar(id,Nombre,Modelo,Descripcion,Categoria,Cantidad){
 	document.getElementById('d').value = Descripcion;
 	document.getElementById('c').value = Categoria;
 	document.getElementById('t').value = Cantidad;
-	var Boton = document.getElementById('Bot')
-	Boton.innerHTML = 'Actualizar';
-
+	var Boton = document.getElementById('Act');
+	var Bot = document.getElementById('Bot');
+	Boton.disabled = false;
+	Bot.disabled = true;
+ 
+	 
 	Boton.onclick = function(){
 
 		var washingtonRef = db.collection("Inventario").doc(id);
@@ -96,8 +110,10 @@ function modificar(id,Nombre,Modelo,Descripcion,Categoria,Cantidad){
 			Cantidad:total
 		})
 		.then(function() {
+			swal("Actualizado", "", "success")
 			console.log("Document successfully updated!");
-			Boton.innerHTML = 'Guardar';
+		 	Boton.disabled = true;
+			Bot.disabled = false;
 			document.getElementById('n').value = '';
 			document.getElementById('m').value = '';
 			document.getElementById('d').value = '';
@@ -110,4 +126,3 @@ function modificar(id,Nombre,Modelo,Descripcion,Categoria,Cantidad){
 		});
 	}
 }
- 
