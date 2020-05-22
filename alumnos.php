@@ -42,7 +42,8 @@
 
           <!-- /.card-header -->
           <div class="card-body">
-            <table id="tabla_alumnos" class="table table-bordered table-hover mt-2 mb-3">
+             <div class="table-responsive">
+              <table id="tabla_alumnos" class="table table-bordered table-hover mt-2 mb-3">
               <thead>
                 <tr>  <!-- Encabezado -->
                  <!-- <th>ID</th> -->
@@ -63,6 +64,9 @@
                   <td></td>
                 </tr>
               </table>
+              
+            </div>
+
             </div>
           </div>
         </div>
